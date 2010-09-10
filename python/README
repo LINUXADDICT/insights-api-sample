@@ -1,0 +1,53 @@
+ABOUT:
+
+This application lets a user download in CSV format the Facebook Insights data
+about an application or page owned by the user.
+
+A live version of this application can be seen at www.facebookinsightsdata.com
+
+This is a sample application that uses the new Insights API.  The API consists
+of an FQL table with four queryable columns and one value column.  The query
+columns are object_id, metric, end_time, and period.  Insights are also
+available for Facebook Pages and Applications via the Graph API at
+https://graph.facebook.com/ID/insights.  For more information, see the FQL
+Insights developer documentation at
+http://developers.facebook.com/docs/api#Analytics, or the Facebook Developers
+Forum at http://forum.developers.facebook.com/ for answers to commonly asked
+questions.
+
+
+SETUP:
+
+This example application was designed to run on the Google App Engine framework.
+To get started with App Engine, visit the documentation at
+http://code.google.com/appengine/ to download and install the App Engine SDK.
+
+A JSON library is required for this application.  Google's App Engine servers
+run Python 2.5 which does not have a JSON library included by default.  You can
+use the Simple JSON library instead.  http://code.google.com/p/simplejson/
+Download and unpack the library and copy the 'simplejson' folder to the
+application's root folder.
+
+Running this Application requires a Facebook Application ID.  Create a new
+Facebook Application at http://www.facebook.com/developers/.  This example
+application uses OAuth 2.0 to access the Facebook Platform API's.  (Find more
+information about this at http://developers.facebook.com/docs/authentication/.)
+To use this method of authentication, the application's Connect URL must be set
+to the location where the application is hosted.  For example, if developing
+locally, you might access this application at http://localhost:8080/, and this
+should be your Connect URL.  If deploying to App Engine, the application is
+accessible at http://MY-APPLICATION.appspot.com/, and this should be your
+Connect URL.  An application's Connect URL can be changed by going to
+http://www.facebook.com/developers/, clicking the 'Edit Settings'
+menu item for the application, and then selecting the 'Connect' pane.
+
+After setting up a Facebook Application, fill out the values in conf.py.sample
+and copy that file to conf.py.  Add your App Engine application name to
+app.yaml.sample and copy that file to app.yaml.  You can now run the application
+locally using appcfg.py or upload the application to the App Engine servers.
+
+
+LICENSE:
+
+The Facebook Insights API Sample Application is licensed under the Apache
+Licence, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.html).
